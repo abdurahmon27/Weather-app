@@ -3,7 +3,7 @@ import WeatherApp from './Components/WeatherApp';
 
 function App() {
   return (
-    <div className="App">
+    <div className="bg flex items-center justify-center max-lg:py-20">
       <WeatherApp />
     </div>
   );

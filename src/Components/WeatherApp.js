@@ -62,8 +62,9 @@ const WeatherApp = () => {
   ];
 
   return (
-    <div className="bg w-full h-screen flex justify-center flex-col items-center">
-      <div className="p-8 rounded-md border border-gray-300 shadow-md w-[350px] h-[350px] flex flex-col justify-center backdrop-blur-md backdrop-filter text-white max-lg:w-[3000px]">
+
+    <div className="w-full h-screen flex justify-center flex-col items-center max-lg:py-5">
+      <div className="p-8 rounded-md border border-gray-300 shadow-md w-[350px] h-auto flex flex-col justify-center backdrop-blur-md backdrop-filter text-white max-lg:w-[300px]">
         <h1 className="text-3xl font-semibold mb-4 font-1">Today's weather</h1>
         {weather && (
           <div>
@@ -83,16 +84,16 @@ const WeatherApp = () => {
         )}
         {error && <p className="text-red-500 mt-4">{error}</p>}
       </div>
-      <div className="mt-5 w-[850px] h-[250px] rounded-md border border-gray-300 shadow-md flex flex-row justify-center backdrop-blur-md backdrop-filter text-white max-lg:w-[300px] max-lg:h-[950px] max-lg:flex-col">
+      <div className="mt-5 w-[850px] h-[250px] rounded-md border border-gray-300 shadow-md flex flex-row justify-center backdrop-blur-md backdrop-filter text-white max-lg:w-[300px] max-lg:h-full max-lg:flex-col max-lg:gap-y-3">
         {forecast.map((day, index) => (
           <div
             key={index}
-            className="m-2 w-[200px] h-[200px] my-auto mx-auto z-10 border border-gray-300 shadow-md flex flex-col justify-center backdrop-blur-md backdrop-filter rounded-lg"
+            className="m-2 w-[200px] h-[200px] mx-auto z-10 border border-gray-300 shadow-md flex flex-col justify-center backdrop-blur-md backdrop-filter rounded-lg my-5"
           >
             <span className="text-2xl m-auto font-1">
               {weekdays[(currentDate.getDay() + index + 1) % 7]}
             </span>
-            <span className="text-sm m-auto text-gray-300 italic font-1">
+            <span className="m-auto text-gray-300 italic text-3xl">
               {getWeatherIcon(day.weather[0].id)}
             </span>
             <span className="text-sm m-auto text-gray-300 italic font-1">
